@@ -16,7 +16,7 @@ public class PaymentController {
 
     private final PaymentService paymentService;
 
-    @PostMapping("/pay")
+    @PostMapping("/v1/pay")
     public ResponseEntity pay(@RequestBody PaymentData paymentData, @RequestHeader("uid") String uid) {
         if (uid == null) {
             ResponseEntity.status(HttpStatus.FORBIDDEN).body("Request uid header is missing");
