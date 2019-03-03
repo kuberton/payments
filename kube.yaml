@@ -80,5 +80,5 @@ spec:
   selector:
     app: payments
   type: LoadBalancer
-  loadBalancerIP: 34.76.106.184
+  # loadBalancerIP: 34.76.106.184
   sessionAffinity: ClientIP
