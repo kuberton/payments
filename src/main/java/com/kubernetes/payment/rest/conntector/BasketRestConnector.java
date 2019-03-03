@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.URLEncoder;
 import java.util.Collections;
 
 @Component
@@ -26,10 +27,10 @@ public class BasketRestConnector {
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         headers.set("X-Auth", uid);
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-        return restTemplate.exchange("34.76.59.35/v1/" + uid, HttpMethod.POST, entity, BasketState.class).getBody();
+        return restTemplate.exchange(URLEncoder.encode("http://34.76.59.35:80/v1/" + uid), HttpMethod.POST, entity, BasketState.class).getBody();
     }
 
     public void clearBasket(String uid) {
-        restTemplate.delete("34.76.59.35/v1/"+uid);
+        restTemplate.delete(URLEncoder.encode("http://34.76.59.35:80/v1/" + uid));
     }
 }
