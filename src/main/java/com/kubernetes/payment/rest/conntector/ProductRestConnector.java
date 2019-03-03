@@ -12,7 +12,6 @@ import java.util.Collections;
 @RequiredArgsConstructor
 public class ProductRestConnector {
 
-    @Value("#{environment.PRODUCTS_SERVICE_HOST}")
     private final RestTemplate restTemplate;
 
     public ProductsDto getProducts() {

@@ -17,7 +17,7 @@ import java.util.Collections;
 @Component
 public class BasketRestConnector {
 
-    @Value("#{environment.BASKET_SERVICE_HOST}")
+    @Value("environment.BASKET_SERVICE_HOST")
     private String host;
 
     @Autowired
@@ -28,7 +28,7 @@ public class BasketRestConnector {
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         headers.set("X-Auth", uid);
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-        return restTemplate.exchange(host + "/v1/" + uid, HttpMethod.POST, entity, BasketState.class).getBody();
+        return restTemplate.exchange(System.getenv("BASKET_SERVICE_HOST") + "/v1/" + uid, HttpMethod.POST, entity, BasketState.class).getBody();
     }
 
     public void clearBasket(String uid) {
