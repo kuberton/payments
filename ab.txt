@@ -1,0 +1,48 @@
+ ./ab.exe -k -n 100 -c 10 -T 'application/json' -p payment.json 34.76.55.224:80/v1/pay
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 34.76.55.224 (be patient).....done
+
+
+Server Software:
+Server Hostname:        34.76.55.224
+Server Port:            80
+
+Document Path:          /v1/pay
+Document Length:        173 bytes
+
+Concurrency Level:      10
+Time taken for tests:   4.269 seconds
+Complete requests:      100
+Failed requests:        0
+Non-2xx responses:      100
+Keep-Alive requests:    0
+Total transferred:      29200 bytes
+Total body sent:        25900
+HTML transferred:       17300 bytes
+Requests per second:    23.43 [#/sec] (mean)
+Time per request:       426.890 [ms] (mean)
+Time per request:       42.689 [ms] (mean, across all concurrent requests)
+Transfer rate:          6.68 [Kbytes/sec] received
+                        5.92 kb/s sent
+                        12.60 kb/s total
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       36   41   5.2     39      64
+Processing:    43  357  68.6    371     443
+Waiting:       41  225 101.1    227     417
+Total:         81  398  69.1    411     485
+
+Percentage of the requests served within a certain time (ms)
+  50%    411
+  66%    417
+  75%    422
+  80%    428
+  90%    442
+  95%    457
+  98%    465
+  99%    485
+ 100%    485 (longest request)
