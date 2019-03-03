@@ -1,4 +1,4 @@
-package rest;
+package com.kubernetes.payment.rest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
