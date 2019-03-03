@@ -8,8 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class
-PaymentEntity {
+public class PaymentEntity {
 
     private String uid;
     private List<OrderEntry> orderEntries;

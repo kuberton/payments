@@ -17,7 +17,7 @@ public class PaymentController {
     private final PaymentService paymentService;
 
     @PostMapping("/v1/pay")
-    public ResponseEntity pay(@RequestBody PaymentData paymentData, @RequestHeader("uid") String uid) {
+    public ResponseEntity pay(@RequestBody PaymentData paymentData, @RequestHeader("X-Auth") String uid) {
         if (uid == null) {
             ResponseEntity.status(HttpStatus.FORBIDDEN).body("Request uid header is missing");
         }

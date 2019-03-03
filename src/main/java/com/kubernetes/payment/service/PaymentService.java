@@ -1,14 +1,13 @@
 package com.kubernetes.payment.service;
 
-import com.kubernetes.payment.dao.PaymentDao;
 import com.kubernetes.payment.dto.BasketState;
 import com.kubernetes.payment.dto.ProductsDto;
 import com.kubernetes.payment.entity.OrderEntry;
 import com.kubernetes.payment.entity.PaymentEntity;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import com.kubernetes.payment.rest.conntector.BasketRestConnector;
 import com.kubernetes.payment.rest.conntector.ProductRestConnector;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +16,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PaymentService {
 
-    private final PaymentDao paymentDao;
     private final BasketRestConnector basketRestConnector;
     private final EmailService emailService;
     private final ProductRestConnector productRestConnector;
